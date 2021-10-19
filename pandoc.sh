@@ -12,6 +12,7 @@ function gollum_to_docx {
   sed -i -E 's/\|[^]]*\]\]//g' temp.md &&
   sed -i '/]]/d' temp.md &&
   pandoc temp.md --toc --citeproc --bibliography bibliography.bib --shift-heading-level-by=-1 \
-  --reference-doc ~/Templates/word_manuscript.docx -o ~/Documents/main.docx &&
+  --reference-doc ~/Templates/word_manuscript.docx -o ~/Documents/main.docx \
+  --from markdown+emoji &&
   rm temp.md
 }

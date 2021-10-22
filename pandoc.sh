@@ -1,6 +1,6 @@
 # gollum to docx
 function gollum_to_docx {
-  # Lazy way and easy to break way to expand output destination
+  # Lazy and easy to break way to expand output destination
   DESTINATION="$(eval echo $2)"
   cp "$1" temp.md &&
   # Fix images

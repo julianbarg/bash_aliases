@@ -9,7 +9,7 @@ function gollum_to_docx {
   sed -i -E '/\* Back to \[\[[^]]*\]\]/d' temp.md &&
   # Remove hyperlinks
   sed -i 's/\[\[//g' temp.md &&
-  sed -i -E 's/\|[^]]*\]\]//g' temp.md &&
+  sed -i -E 's/\|[^|]]*\]\]//g' temp.md &&
   sed -i 's/]]//g' temp.md &&
   pandoc temp.md --toc --citeproc --bibliography bibliography.bib --shift-heading-level-by=-1 \
   --reference-doc ~/Templates/word_manuscript.docx -o ~/Documents/main.docx \
